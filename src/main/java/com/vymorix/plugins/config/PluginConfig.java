@@ -13,8 +13,8 @@ public class PluginConfig {
         this.config = plugin.getConfig();
         this.config.options().copyDefaults(true);
 
-        config.addDefault("telegram.token", "");
-        config.addDefault("telegram.chatId", "");
+        config.addDefault("telegram.token", null);
+        config.addDefault("telegram.chatId", null);
         config.addDefault("stats.send_interval_minutes", 1);
 
         plugin.saveConfig();

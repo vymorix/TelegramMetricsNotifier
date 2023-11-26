@@ -18,6 +18,10 @@ public class TelegramService {
     }
 
     public void sendServerStats(String message) {
+        if (config.getToken() == "" || config.getChatId() == "") {
+            System.out.println("Telegram token or chat id is not set");
+            return;
+        }
         try {
             URL url =
                     new URL(
@@ -27,7 +31,7 @@ public class TelegramService {
             String payload = String.format("chat_id=%s&text=%s", config.getChatId(), message);
             httpRequestUtil.sendPostRequest(url, payload.getBytes());
         } catch (Exception e) {
-            logger.warning("Failed to send message to Telegram");
+            System.out.println("Failed to send message to Telegram");
             e.printStackTrace();
         }
     }
