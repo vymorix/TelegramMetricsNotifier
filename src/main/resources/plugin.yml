@@ -1,0 +1,17 @@
+name: TelegramMetricsNotifier
+version: 1.0
+main: com.vymorix.plugins.TelegramMetricsNotifier
+api-version: 1.17
+author: Vymorix
+description: A Minecraft plugin to send server metrics to Telegram.
+
+commands:
+  config:
+    description: Configure the Telegram settings.
+    usage: /config <botToken> <chatId> <intervalMinutes>
+    permission: telegramnotifier.config
+
+permissions:
+  telegramnotifier.config:
+    description: Allows the player to configure Telegram settings.
+    default: op
